@@ -42,7 +42,7 @@ export default function LandingPage() {
               Unlock Insights from Your Documents
             </h1>
             <p className="mt-6 text-lg text-muted-foreground">
-              DocuBrain is an intelligent assistant that summarizes your documents, answers your questions, and challenges your knowledge. Upload a file and let the magic begin.
+              Document Summary Assistant is an intelligent assistant that summarizes your documents, answers your questions, and challenges your knowledge. Upload a file and let the magic begin.
             </p>
             <div className="mt-10">
               <Button asChild size="lg">
@@ -96,11 +96,11 @@ export default function LandingPage() {
     {/* Creator Section */}
     <div className="text-center mb-8">
       <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 mb-4">
-        <span className="text-2xl font-bold text-white">AP</span>
+        <span className="text-2xl font-bold text-white">BK</span>
       </div>
-      <h3 className="text-lg font-semibold text-foreground mb-2">Ambuj Pandey</h3>
+      <h3 className="text-lg font-semibold text-foreground mb-2">Bharath Kolli</h3>
       <p className="text-sm text-muted-foreground max-w-md mx-auto leading-relaxed">
-        🏆 2× CodeQuest Winner || MERN Stack Developer || Next.js developer || SEO Specialist || Data Analyst | DSA || AWS
+        MERN Stack Developer || Software developer || DSA || Azure
       </p>
     </div>
 
@@ -108,30 +108,30 @@ export default function LandingPage() {
     <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
       <div className="flex items-center text-sm text-muted-foreground">
         <Mail className="h-4 w-4 mr-2 text-blue-500" />
-        <a href="mailto:ambujp863@gmail.com" className="hover:text-foreground transition-colors">
-          ambujp863@gmail.com
+        <a href="mailto:bharathkolli24@gmail.com" className="hover:text-foreground transition-colors">
+          bharathkolli24@gmail.com
         </a>
       </div>
       <div className="flex items-center text-sm text-muted-foreground">
         <Phone className="h-4 w-4 mr-2 text-green-500" />
-        <a href="tel:+917518809266" className="hover:text-foreground transition-colors">
-          +91 7518809266
+        <a href="tel:+919392538391" className="hover:text-foreground transition-colors">
+          +91 9392538391
         </a>
       </div>
     </div>
 
     {/* Social Media Links */}
     <div className="flex justify-center items-center space-x-6 mb-8">
-      <a 
-        href="mailto:ambujp863@gmail.com" 
+      <a
+        href="mailto:bharathkolli24@gmail.com"
         className="group flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-red-500 to-pink-500 text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
         aria-label="Email"
       >
         <Mail className="h-5 w-5 group-hover:scale-110 transition-transform" />
       </a>
       
-      <a 
-        href="https://linkedin.com/in/ambujpandey1" 
+      <a
+        href="https://www.linkedin.com/in/contactbharathkolli/"
         target="_blank" 
         rel="noopener noreferrer" 
         className="group flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
@@ -141,7 +141,7 @@ export default function LandingPage() {
       </a>
       
       <a 
-        href="https://github.com/ambujpandey1" 
+        href="https://github.com/Bharathkolli24"
         target="_blank" 
         rel="noopener noreferrer" 
         className="group flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
@@ -151,7 +151,7 @@ export default function LandingPage() {
       </a>
       
       <a 
-        href="https://instagram.com/thisisambujp" 
+        href="https://www.instagram.com/bharathhhh_____?igsh=NHpuOXQwZG1lajc2" 
         target="_blank" 
         rel="noopener noreferrer" 
         className="group flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
@@ -165,12 +165,12 @@ export default function LandingPage() {
     <div className="border-t border-muted-foreground/20 pt-6">
       <div className="flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground">
         <p className="mb-2 sm:mb-0">
-          © {new Date().getFullYear()} DocuBrain. All rights reserved.
+          © {new Date().getFullYear()} Document Summary Assistant. All rights reserved.
         </p>
         <p className="flex items-center">
           Developed by 
           <span className="text-red-500 mx-1 animate-pulse">❤️</span> 
-          Ambuj Pandey
+          Bharath Kolli
         </p>
       </div>
     </div>
