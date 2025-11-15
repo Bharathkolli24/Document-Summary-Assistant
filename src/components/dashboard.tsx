@@ -37,24 +37,28 @@ export default function Dashboard() {
       let extractedText = "";
 
       if (file.type === "application/pdf") {
-        const pdfjsLib = await import("pdfjs-dist/legacy/build/pdf.js");
-      
-        // Point worker to public folder (NOT imported)
-        pdfjsLib.GlobalWorkerOptions.workerSrc = "/pdf.worker.js";
-      
-        const arrayBuffer = await file.arrayBuffer();
-        const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
-      
-        let text = "";
-        for (let i = 1; i <= pdf.numPages; i++) {
-          const page = await pdf.getPage(i);
-          const content = await page.getTextContent();
-          text += content.items.map((it: any) => it.str).join("") + "\n";
+        if (typeof window !== "undefined") {
+          // Lazy import PDFJS only in the browser
+          const pdfjsLib = (await import("pdfjs-dist/legacy/build/pdf")).default;
+          // Make sure workerSrc is set safely
+          if (pdfjsLib?.GlobalWorkerOptions) {
+            pdfjsLib.GlobalWorkerOptions.workerSrc = "/pdf.worker.js";
+          }
+
+          const arrayBuffer = await file.arrayBuffer();
+          const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+
+          let text = "";
+          for (let i = 1; i <= pdf.numPages; i++) {
+            const page = await pdf.getPage(i);
+            const content = await page.getTextContent();
+            text += content.items.map((it: any) => it.str).join(" ") + "\n";
+          }
+          extractedText = text;
+        } else {
+          throw new Error("PDF processing is only supported in the browser.");
         }
-      
-        extractedText = text;
-      }
-      else if (file.type.startsWith("image/")) {
+      } else if (file.type.startsWith("image/")) {
         extractedText = await extractTextFromImage(file);
       }
 
@@ -62,7 +66,7 @@ export default function Dashboard() {
         name: file.name,
         content: extractedText,
         summaryLength,
-      } as ProcessDocumentInput);
+      });
 
       setActiveDoc(newDoc);
 
@@ -81,6 +85,7 @@ export default function Dashboard() {
       setIsProcessing(false);
     }
   };
+
 
   const handleNewDocument = () => setActiveDoc(null);
 
